@@ -1,4 +1,4 @@
-.Container {
+.container {
     width: 1500px;
     margin: 0 auto;
 }
@@ -6,26 +6,28 @@
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     background-color: #5AA65A;
-    text-align: center;
-    font-size: 25px;
+    font-size: 20px;
 }
 
-h2 {
+a {
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
 }
 
-h2:hover{
+a:hover{
     text-decoration: underline;
 }
 
-nav a.splitleft{
-    float: left;
-}
-
-nav a.splitright{
-    float: right;
+footer {
+    background-color: #5AA65A;
+    position:absolute;
+    width:1500px;
+    top:100%;
+    margin:0 auto;
+    text-align:center;
+    
 }
