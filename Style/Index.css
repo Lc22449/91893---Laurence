@@ -12,7 +12,7 @@ nav {
     font-size: 20px;
 }
 
-a {
+.navigation {
     color: black;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
@@ -37,9 +37,22 @@ h2 {
     justify-content: center;
 }
 p {
-    width: 1200px;
+    width: 1300px;
     text-align: center;
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    font-size: 25px;
+}
+
+.sourcelinks {
+    display: flex;
+    flex-direction: column;
+    color: blue;
+    text-align: center;
+
+}
+
+.sourcelinks a:visited {
+    color: blueviolet;
 }
