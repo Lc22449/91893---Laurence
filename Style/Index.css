@@ -12,11 +12,12 @@ nav {
     font-size: 20px;
 }
 
-.navigation {
+nav a, footer a {
     color: black;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
 }
+
 
 a:hover{
     text-decoration: underline;
@@ -55,4 +56,8 @@ p {
 
 .sourcelinks a:visited {
     color: blueviolet;
+}
+
+div a {
+    font-size: 20px;
 }
