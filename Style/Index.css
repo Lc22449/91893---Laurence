@@ -11,7 +11,7 @@ nav {
     gap: 25px;
     background-color: #5AA65A;
     margin-bottom: 20px;
-    height: 40px;
+    height: 50px;
 }
 
 nav a, footer a {
@@ -19,6 +19,7 @@ nav a, footer a {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-decoration: none;
     font-size: 30px;
+    padding: 5px;
 }
 
 
@@ -52,36 +53,38 @@ h2 {
 
 .flex-container article{
     border: black;
-    width: 600px;
+    width: 700px;
     position: relative;
     flex-direction: row;
     border: 3px solid grey;
     padding: 10px;
     border-radius: 5px;
-    height: 270px;
+    height: 300px;
 }
 .flex-container article p{
     font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .sourcelinks {
-    width: 1284px;
+    width: 1484px;
     display: flex;
     flex-direction: column;
     color: blue;
     text-align: center;
+}
+
+.sourcelinks a{
     text-decoration: none;
 }
 
-.sourcelinks :hover{
+.sourcelinks a:hover{
     text-decoration: underline;
 }
 
 .sourcelinks a:visited {
-    color: rgb(161, 137, 184);
+    color: purple;
 }
-
-
 
 .sourcelinks{
     border: 3px solid grey;
