@@ -80,6 +80,9 @@ h2 {
     flex-direction: column;
     color: blue;
     text-align: center;
+    border: 3px solid grey;
+    border-radius: 5px;
+    font-size: 20px;
 }
 
 .sourcelinks a{
@@ -94,13 +97,35 @@ h2 {
     color: purple;
 }
 
-.sourcelinks{
-    border: 3px solid grey;
-    border-radius: 5px;
-    font-size: 20px;
-}
-
 div .sourcelinks{
     justify-content: center;
     margin: 0 auto;
 }
+
+.slideshow-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.slideshow-container a {
+    display: block;
+    overflow: hidden;
+    width: 800px;
+    height: 450px;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.slideshow-container img:hover {
+    transform: scale(1.05);
+}
+
+
