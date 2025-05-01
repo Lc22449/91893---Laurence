@@ -1,11 +1,9 @@
 secret_word = "hello"
+remaining_attempts = 6
+guessed_letters = ""
 
-print("Guess the word one letter at a time!")
+def Guessed_word():
+    print('_' * len(secret_word))
 
-
-
-x = input("Write your guess here: ")
-
-letters = []
-
+Guessed_word()
 
