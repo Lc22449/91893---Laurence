@@ -2,9 +2,8 @@ a = 26
 
 def area(Width, Length=2):
     area = Width * Length
-    global a
-    a = 25
-    return area, a
+
+    return area, (1, 2, 3)
 
 area_a = area(5, 6)
 print(area_a)
