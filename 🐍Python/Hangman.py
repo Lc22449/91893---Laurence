@@ -1,4 +1,5 @@
 secret_word = "hello"
+letters = ["h", "e", "l", "l", "o"]
 remaining_attempts = 6
 guessed_letters = ""
 
