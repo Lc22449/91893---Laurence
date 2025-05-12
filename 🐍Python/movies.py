@@ -1,7 +1,15 @@
 def search_movies():
+    Movie_name = input("insert movie name here: ")
+    for item in movies:
+        if movies[item]["title"] == Movie_name:
+            for key, value in movies[item].items():
+                print(f'{key}: {value}')
+
+def edit_movies():
     pass
 
-
+def buy_tickets():
+    pass
 
 movies = {
     "M001": {
@@ -56,6 +64,15 @@ while x == 1:
             print("You have access")
             if username == "admin":
                 print("You are admin, and therefore have admin permissions")
+                action = input("Input your chosen action, here are your options as an admin: Search Movies, Edit Movies, Buy Tickets  ")
+                if action == "Search Movies":
+                    search_movies()
+                elif action == "Edit Movies":
+                    edit_movies()
+                elif action == "Buy Tickets":
+                    buy_tickets()
+                else:
+                    print("Action not recognised")
             else:
                 print("Default user permissions granted")
             x += 1
