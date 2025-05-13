@@ -4,9 +4,13 @@ def search_movies():
         if movies[item]["title"] == Movie_name:
             for key, value in movies[item].items():
                 print(f'{key}: {value}')
+        return item
 
 def edit_movies():
-    pass
+    print("Please input the movie you would like to edit")
+    movie_id = search_movies()
+    movie_key = input("Input chosen key: ")
+
 
 def buy_tickets():
     pass
