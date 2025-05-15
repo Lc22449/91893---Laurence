@@ -17,5 +17,5 @@ def is_prime(n):
 
 # Example usage:
 primes = prime_generator()
-for _ in range(100):  # Print the first 10 prime numbers
+for _ in range(100000):  # Print the first 10 prime numbers
     print(next(primes))
