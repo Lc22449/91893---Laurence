@@ -6,3 +6,8 @@ profile = {
 }
 
 print(profile["name"]["Middle Name"])
+
+gay = 1
+kimi = gay
+if gay == 1 :
+    print("kimi likes men")
