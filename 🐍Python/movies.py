@@ -1,24 +1,4 @@
-def search_movies():
-    Movie_name = input("insert movie name here: ")
-    for item in movies:
-        if movies[item]["title"] == Movie_name:
-            for key, value in movies[item].items():
-                print(f'{key}: {value}')
-    item = Movie_name
-    print(*movies)[item]
-
-def edit_movies():
-    print("Please input the movie you would like to edit")
-    movie_id = search_movies()
-    movie_key = input("Input chosen key: ")
-    for key in movies[movie_id]:
-        if movie_key == movies[movie_id][key]:
-            movies[movie_id][key] == input("Change your key: ")
-
-
-def buy_tickets():
-    pass
-
+import easygui
 movies = {
     "M001": {
         "title": "Inception",
@@ -62,10 +42,31 @@ users = {
     "Bo": {"password": "bo", "balance": 312.75},
 }
 
+def search_movies():
+    Movie_name = input("insert movie name here: ")
+    for item in movies:
+        if movies[item]["title"] == Movie_name:
+            for key, value in movies[item].items():
+                print(f'{key}: {value}\n')
+    return item
+
+def edit_movies():
+    print("Please input the movie you would like to edit")
+    movie_id = search_movies()
+    movie_key = input("Input chosen key: ")
+    for key in movies[movie_id]:
+        if movie_key == key:
+            movies[movie_id][key] = input("Change your key: ")
+
+
+
+def buy_tickets():
+    pass
+
 x = 1
 
 while x == 1:
-    username = input("Input Username: ")
+    username = easygui.multenterbox("ob")
     if username in users:
         password = input("Input Password: ")
         if password == users[username]["password"]:
