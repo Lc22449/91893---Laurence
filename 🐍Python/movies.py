@@ -66,7 +66,7 @@ def buy_tickets():
 x = 1
 
 while x == 1:
-    username = easygui.multenterbox("ob")
+    username = easygui.msgbox("hello")
     if username in users:
         password = input("Input Password: ")
         if password == users[username]["password"]:
