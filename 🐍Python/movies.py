@@ -60,19 +60,20 @@ def edit_movies():
 
 
 
+
 def buy_tickets():
     pass
 
 x = 1
 
 while x == 1:
-    username = easygui.msgbox("hello")
+    username = easygui.enterbox("hello")
     if username in users:
-        password = input("Input Password: ")
+        password = easygui.enterbox("Input Password: ")
         if password == users[username]["password"]:
-            print("You have access")
+            easygui.msgbox("You have access")
             if username == "admin":
-                print("You are admin, and therefore have admin permissions")
+                easygui.msgbox("You are admin, and therefore have admin permissions")
                 action = input("Input your chosen action, here are your options as an admin: Search Movies, Edit Movies, Buy Tickets  ")
                 if action == "Search Movies":
                     search_movies()
