@@ -41,24 +41,26 @@ users = {
     "Bobby": {"password": "bobby", "balance": 820.00},
     "Bo": {"password": "bo", "balance": 312.75},
 }
+def print_dictionary(movie_id):
+    msg = ''
+    for key, value in movies[movie_id].items():
+        msg += f'{key} : {value}\n'
+    easygui.msgbox((f"The Movie {movie_id} has this information:\n" +msg))
 
 def search_movies():
-    Movie_name = input("insert movie name here: ")
-    for item in movies:
-        if movies[item]["title"] == Movie_name:
-            for key, value in movies[item].items():
-                print(f'{key}: {value}\n')
-    return item
+    Movie_name = easygui.enterbox("insert movie name here: ")
+    for movie_id in movies:
+        if movies[movie_id]["title"] == Movie_name:
+            print_dictionary(movie_id)
+    return movie_id
 
 def edit_movies():
-    print("Please input the movie you would like to edit")
     movie_id = search_movies()
-    movie_key = input("Input chosen key: ")
+    movie_key = easygui.enterbox("Input chosen key: ")
     for key in movies[movie_id]:
         if movie_key == key:
-            movies[movie_id][key] = input("Change your key: ")
-
-
+            movies[movie_id][key] = easygui.enterbox("Change your key: ")
+    print_dictionary(movie_id)
 
 
 def buy_tickets():
@@ -67,28 +69,27 @@ def buy_tickets():
 x = 1
 
 while x == 1:
-    username = easygui.enterbox("hello")
+    username = easygui.enterbox("Input Your Username")
     if username in users:
         password = easygui.enterbox("Input Password: ")
         if password == users[username]["password"]:
             easygui.msgbox("You have access")
             if username == "admin":
                 easygui.msgbox("You are admin, and therefore have admin permissions")
-                action = input("Input your chosen action, here are your options as an admin: Search Movies, Edit Movies, Buy Tickets  ")
+                action = easygui.choicebox("Pick an action:", choices=["Search Movies", "Edit Movies", "Buy Tickets"])
                 if action == "Search Movies":
-                    search_movies()
+                    item = search_movies()
                 elif action == "Edit Movies":
                     edit_movies()
-                    print(movies)
                 elif action == "Buy Tickets":
                     buy_tickets()
                 else:
-                    print("Action not recognised")
+                    easygui.msgbox("Action not recognised")
             else:
-                print("Default user permissions granted")
+                easygui.msgbox("Default user permissions granted")
             x += 1
         else: 
-            print("Validation Error")
+            easygui.msgbox("Validation Error")
     else: 
-        print("Validation Error")
+        easygui.msgbox("Validation Error")
 
