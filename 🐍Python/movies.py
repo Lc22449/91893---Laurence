@@ -41,6 +41,7 @@ users = {
     "Bobby": {"password": "bobby", "balance": 820.00},
     "Bo": {"password": "bo", "balance": 312.75},
 }
+
 def print_dictionary(movie_id):
     msg = ''
     for key, value in movies[movie_id].items():
@@ -52,7 +53,7 @@ def search_movies():
     for movie_id in movies:
         if movies[movie_id]["title"] == Movie_name:
             print_dictionary(movie_id)
-    return movie_id
+            return movie_id
 
 def edit_movies():
     movie_id = search_movies()
@@ -62,9 +63,12 @@ def edit_movies():
             movies[movie_id][key] = easygui.enterbox("Change your key: ")
     print_dictionary(movie_id)
 
+def buy_tickets(movie_id):
+    msg = ''
+    
+    easygui.msgbox(f"What movie would you like to buy tickets to?\nYour balance is {balance}")
+    search_movies()
 
-def buy_tickets():
-    pass
 
 x = 1
 
