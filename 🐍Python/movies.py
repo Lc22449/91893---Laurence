@@ -1,4 +1,5 @@
 import easygui
+
 movies = {
     "M001": {
         "title": "Inception",
@@ -63,16 +64,16 @@ def edit_movies():
             movies[movie_id][key] = easygui.enterbox("Change your key: ")
     print_dictionary(movie_id)
 
-def buy_tickets(movie_id):
-    msg = ''
-    
+def buy_tickets():
+    balance = users[username]["balance"]
     easygui.msgbox(f"What movie would you like to buy tickets to?\nYour balance is {balance}")
-    search_movies()
+    movie_id = search_movies()
+    multiplier = easygui.enterbox("How much tickets would you like to buy?")
+    balance -= (multiplier * movies[movie_id]["price"])
+    easygui.msgbox(f'Your balance is now: {balance}')
 
 
-x = 1
-
-while x == 1:
+while True:
     username = easygui.enterbox("Input Your Username")
     if username in users:
         password = easygui.enterbox("Input Password: ")
@@ -91,9 +92,16 @@ while x == 1:
                     easygui.msgbox("Action not recognised")
             else:
                 easygui.msgbox("Default user permissions granted")
-            x += 1
+                action = easygui.choicebox("Pick an action:", choices=["Search Movies", "Buy Tickets"])
+                if action == "Search Movies":
+                    item = search_movies()
+                elif action == "Buy Tickets":
+                    buy_tickets()
+                else:
+                    easygui.msgbox("Action not recognised")
         else: 
             easygui.msgbox("Validation Error")
+            continue
     else: 
         easygui.msgbox("Validation Error")
-
+        exit()
