@@ -1,4 +1,6 @@
 import easygui
+#Add return
+#Add valueType error fall back  
 
 movies = {
     "M001": {
@@ -65,13 +67,42 @@ def edit_movies():
     print_dictionary(movie_id)
 
 def buy_tickets():
-    balance = users[username]["balance"]
-    easygui.msgbox(f"What movie would you like to buy tickets to?\nYour balance is {balance}")
-    movie_id = search_movies()
-    multiplier = easygui.enterbox("How much tickets would you like to buy?")
-    balance -= (multiplier * movies[movie_id]["price"])
-    easygui.msgbox(f'Your balance is now: {balance}')
+    while True:
+        try:
+            balance = users[username]["balance"]
+            easygui.msgbox(f"What movie would you like to buy tickets to?\nYour balance is {balance}")
+            movie_id = search_movies()
+            multiplier = easygui.enterbox("How much tickets would you like to buy?")
+            multiplier = int(multiplier)
+            balance -= (multiplier * (movies[movie_id]["price"]))
+            users[username]["balance"] = balance
+            easygui.msgbox(f'Your balance is now: {users[username]["balance"]}')
+            break
+        except TypeError:
+            easygui.msgbox("Value error")
+            return
+            
+def admin_commands():
+    easygui.msgbox("You are admin, and therefore have admin permissions")
+    action = easygui.choicebox("Pick an action:", choices=["Search Movies", "Edit Movies", "Buy Tickets"])
+    if action == "Search Movies":
+        item = search_movies()
+    elif action == "Edit Movies":
+        edit_movies()
+    elif action == "Buy Tickets":
+        buy_tickets()
+    else:
+        easygui.msgbox("Action not recognised")
 
+def normie_commands():
+    easygui.msgbox("Default user permissions granted")
+    action = easygui.choicebox("Pick an action:", choices=["Search Movies", "Buy Tickets"])
+    if action == "Search Movies":
+        item = search_movies()
+    elif action == "Buy Tickets":
+        buy_tickets()
+    else:
+        easygui.msgbox("Action not recognised")
 
 while True:
     username = easygui.enterbox("Input Your Username")
@@ -80,25 +111,9 @@ while True:
         if password == users[username]["password"]:
             easygui.msgbox("You have access")
             if username == "admin":
-                easygui.msgbox("You are admin, and therefore have admin permissions")
-                action = easygui.choicebox("Pick an action:", choices=["Search Movies", "Edit Movies", "Buy Tickets"])
-                if action == "Search Movies":
-                    item = search_movies()
-                elif action == "Edit Movies":
-                    edit_movies()
-                elif action == "Buy Tickets":
-                    buy_tickets()
-                else:
-                    easygui.msgbox("Action not recognised")
+                admin_commands()
             else:
-                easygui.msgbox("Default user permissions granted")
-                action = easygui.choicebox("Pick an action:", choices=["Search Movies", "Buy Tickets"])
-                if action == "Search Movies":
-                    item = search_movies()
-                elif action == "Buy Tickets":
-                    buy_tickets()
-                else:
-                    easygui.msgbox("Action not recognised")
+                normie_commands()
         else: 
             easygui.msgbox("Validation Error")
             continue
