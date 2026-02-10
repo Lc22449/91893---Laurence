@@ -17,7 +17,7 @@ header {
     justify-content: center;
 }
 
-nav {
+nav ul{
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -46,8 +46,17 @@ main {
     justify-content: center;
 }
 
-.background_color{
+.background{
     display: flex;
-    
+    flex-direction: column;
     background-color: lightblue;
+}
+
+nav ul.no_dots{
+    list-style-type: none;
+}
+
+nav ul li.no_dots:hover{
+    list-style-type: none;
+    background-color: aliceblue
 }
