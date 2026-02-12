@@ -1,0 +1,133 @@
+body{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    color: black;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.website_centre{
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.website_centre img{
+    align-self: center;
+}
+
+.website_centre p{
+    text-align: center;
+}
+
+.website_centre h2{
+    text-align: center;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+.container{
+    width: auto;
+    justify-content: space-between;
+    column-gap: 0px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.background{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color: lightblue;
+}
+
+.no_dots{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+nav ul li.li1:hover{
+    list-style-type: none;
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+nav ul li.li2:hover{
+    list-style-type: none;
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+nav ul li.li3:hover{
+    list-style-type: none;
+    background-color: aliceblue;
+    text-decoration: none;
+}
+
+header div h1{
+    background-color: lightblue;
+    padding: 20px;
+}
+
+ul li.li2{
+    padding: 20px;
+    text-decoration: none;
+}
+
+ul li.li1{
+    padding: 20px;
+    text-decoration: none;
+}
+
+ul li.li3{
+    padding: 20px;
+    text-decoration: none;
+}
+
+.NavBar{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+div ul{
+    margin: 0;
+}
+
+section{
+    display: flex;
+
+}
+
+section ul li{
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+section ul{
+    display: flex;
+    flex-direction: row;
+}
