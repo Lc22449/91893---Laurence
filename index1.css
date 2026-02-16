@@ -4,12 +4,6 @@ body{
     flex-direction: column;
 }
 
-header {
-    color: black;
-    text-align: center;
-    font-family:'Courier New', Courier, monospace;
-}
-
 .website_centre{
     color: black;
     font-family: 'Courier New', Courier, monospace;
